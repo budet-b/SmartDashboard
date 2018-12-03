@@ -17,4 +17,17 @@ struct Constants {
             static let SEARCH   = "search/?lattlong="
         }
     }
+    
+    static let weatherStatus = [
+        "sn" : "Neigeux",
+        "sl" : "Neige fondue",
+        "h"  : "Grêle",
+        "t"  : "Orage",
+        "hr" : "Forte pluie",
+        "lr" : "Pluie légère",
+        "s"  : "Pluvieux",
+        "hc" : "Très couvert",
+        "lc" : "Partiellement couvert",
+        "c"  : "Éclaircies"
+    ]
 }

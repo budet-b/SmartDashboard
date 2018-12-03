@@ -21,6 +21,7 @@
 		DA1EB56121B5DBA60043999C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56021B5DBA60043999C /* MainViewController.swift */; };
 		DA1EB56321B5DBC70043999C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56221B5DBC70043999C /* Constants.swift */; };
 		DA1EB56521B5DC9D0043999C /* DecoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56421B5DC9D0043999C /* DecoderJSON.swift */; };
+		DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DA1EB56021B5DBA60043999C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DA1EB56221B5DBC70043999C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA1EB56421B5DC9D0043999C /* DecoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderJSON.swift; sourceTree = "<group>"; };
+		DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,7 +103,6 @@
 				DA1EB54A21B5DB1E0043999C /* Controllers */,
 				DA1EB54921B5DB1A0043999C /* Views */,
 				DA1EB54821B5DB140043999C /* Models */,
-				DA1EB54621B5DB100043999C /* LocationEpita.gpx */,
 				CBF5BC3D21B5D9B5005321E4 /* AppDelegate.swift */,
 			);
 			path = Core;
@@ -153,7 +154,9 @@
 		DA1EB54D21B5DB320043999C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DA1EB54621B5DB100043999C /* LocationEpita.gpx */,
 				DA1EB56221B5DBC70043999C /* Constants.swift */,
+				DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				DA1EB55221B5DB480043999C /* DataAccess.swift in Sources */,
 				CBF5BC3E21B5D9B5005321E4 /* AppDelegate.swift in Sources */,
 				DA1EB55B21B5DB820043999C /* Weather.swift in Sources */,
+				DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */,
 				DA1EB56321B5DBC70043999C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
