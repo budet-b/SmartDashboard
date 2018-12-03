@@ -28,5 +28,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Automatic</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Need for weather</string>
 </dict>
 </plist>
