@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HomeKit
 
 class MainBusiness {
     
@@ -19,6 +20,12 @@ class MainBusiness {
     static func getWeather(woeid: Int, date: String, completed: @escaping ((_ response:[Weather]?, _ error:Error?) -> Void)) -> Void {
         DataAccess.getWeather(woeid: woeid, date: date) { (response, error) in
             completed(response, error)
+        }
+    }
+    
+    static func getAccessories(manager: HMHomeManager, completed: @escaping ([HMAccessory]) -> ()){
+        DataAccess.getAccessories(manager: manager) { (response) in
+            completed(response)
         }
     }
 }

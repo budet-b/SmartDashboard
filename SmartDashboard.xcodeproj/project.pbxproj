@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EE38F1BE32D090B9E4609B7 /* Pods_SmartDashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */; };
+		CB7CAEC921C55718006C4E2F /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7CAEC821C55718006C4E2F /* HomeKit.framework */; };
 		CBF5BC3E21B5D9B5005321E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5BC3D21B5D9B5005321E4 /* AppDelegate.swift */; };
 		CBF5BC4521B5D9B8005321E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF5BC4421B5D9B8005321E4 /* Assets.xcassets */; };
 		DA1EB54721B5DB100043999C /* LocationEpita.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DA1EB54621B5DB100043999C /* LocationEpita.gpx */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		59D32E5DC1A7CF5E63CEAE19 /* Pods-SmartDashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDashboard/Pods-SmartDashboard.release.xcconfig"; sourceTree = "<group>"; };
 		8E247E6DF5F36FB704983DF7 /* Pods-SmartDashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDashboard/Pods-SmartDashboard.debug.xcconfig"; sourceTree = "<group>"; };
+		CB7CAEC721C55718006C4E2F /* SmartDashboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartDashboard.entitlements; sourceTree = "<group>"; };
+		CB7CAEC821C55718006C4E2F /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		CBF5BC3A21B5D9B5005321E4 /* SmartDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF5BC3D21B5D9B5005321E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF5BC4421B5D9B8005321E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7CAEC921C55718006C4E2F /* HomeKit.framework in Frameworks */,
 				0EE38F1BE32D090B9E4609B7 /* Pods_SmartDashboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +93,7 @@
 		CBF5BC3C21B5D9B5005321E4 /* SmartDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				CB7CAEC721C55718006C4E2F /* SmartDashboard.entitlements */,
 				CBF5BC4621B5D9B8005321E4 /* Info.plist */,
 			);
 			path = SmartDashboard;
@@ -182,6 +187,7 @@
 		EE8192CE8CC62FE2228C0C05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB7CAEC821C55718006C4E2F /* HomeKit.framework */,
 				EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */,
 			);
 			name = Frameworks;
@@ -221,6 +227,14 @@
 				TargetAttributes = {
 					CBF5BC3921B5D9B5005321E4 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -446,6 +460,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SmartDashboard/SmartDashboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				INFOPLIST_FILE = SmartDashboard/Info.plist;
@@ -455,6 +471,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.epimac.SmartDashboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
@@ -466,6 +483,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = SmartDashboard/SmartDashboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				INFOPLIST_FILE = SmartDashboard/Info.plist;
@@ -475,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.epimac.SmartDashboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 			};

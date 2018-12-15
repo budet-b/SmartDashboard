@@ -30,5 +30,7 @@
 	<string>Automatic</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Need for weather</string>
+    <key>NSHomeKitUsageDescription</key>
+    <string>Need for HomeKit</string>
 </dict>
 </plist>
