@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         homeKitTableViewAccessories.dataSource = self
         locationManager.delegate = self
         homeManager.delegate = self
-        
+
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -79,6 +79,9 @@ class MainViewController: UIViewController {
     func updateHKAccessories(accessories: [HMAccessory]) {
         print(accessories)
         hmAccessories = accessories
+        for accessory in accessories {
+            accessory.delegate = self
+        }
         homeKitTableViewAccessories.reloadData()
     }
 }
@@ -121,5 +124,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: HMHomeDelegate, HMAccessoryDelegate, HMHomeManagerDelegate {
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         MainBusiness.getAccessories(manager: manager, completed: self.updateHKAccessories)
+    }
+    
+    func accessory(_ accessory: HMAccessory,
+                   service: HMService,
+                   didUpdateValueFor characteristic: HMCharacteristic) {
+        print(accessory.name)
     }
 }
