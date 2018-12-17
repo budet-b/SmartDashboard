@@ -12,7 +12,7 @@ import Alamofire
 public enum Router {
     case getTest()
     case getSearchWeather(String)
-    case getWeather(Int, String)
+    case getWeather(Int)
 }
 
 extension Router : RouterProtocol {
@@ -34,8 +34,8 @@ extension Router : RouterProtocol {
             return Constants.Url.BASE_URL
         case .getSearchWeather(let lattlong):
             return Constants.Url.WeatherAPI.BASE_URL + Constants.Url.WeatherAPI.SEARCH + lattlong
-        case .getWeather(let woeid, let date):
-            return Constants.Url.WeatherAPI.BASE_URL + "\(woeid)" + "/2018/12/03/"
+        case .getWeather(let woeid):
+            return Constants.Url.WeatherAPI.BASE_URL + "\(woeid)" + Date().toWeatherDate()
         }
     }
     

@@ -16,8 +16,8 @@ class MainBusiness {
         }
     }
     
-    static func getWeather(woeid: Int, date: String, completed: @escaping ((_ response:[Weather]?, _ error:Error?) -> Void)) -> Void {
-        DataAccess.getWeather(woeid: woeid, date: date) { (response, error) in
+    static func getWeather(woeid: Int, completed: @escaping ((_ response:[Weather]?, _ error:Error?) -> Void)) -> Void {
+        DataAccess.getWeather(woeid: woeid) { (response, error) in
             completed(response, error)
         }
     }
