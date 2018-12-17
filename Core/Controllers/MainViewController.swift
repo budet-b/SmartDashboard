@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
+        getNews()
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
         }
@@ -83,6 +83,16 @@ class MainViewController: UIViewController {
             accessory.delegate = self
         }
         homeKitTableViewAccessories.reloadData()
+    }
+    
+    func getNews() {
+        MainBusiness.getNews { (response, error) in
+            if let articles = response?.articles {
+                for article in articles {
+                    print(article.title!)
+                }
+            }
+        }
     }
 }
 
