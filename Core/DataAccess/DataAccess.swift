@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import HomeKit
 
 class DataAccess {
 
@@ -29,6 +30,33 @@ class DataAccess {
                 })
             }
         }
+    }
+    
+    static func getAccessories(manager: HMHomeManager, completed: @escaping ([HMAccessory]) -> ()){
+        var accessoriesRes: [HMAccessory] = []
+        if let home = manager.primaryHome {
+            for room in home.rooms {
+                for accessory in room.accessories {
+                    print(accessory.name)
+                    if (accessory.category.categoryType == HMAccessoryCategoryTypeOther && accessory.manufacturer == "Philips") || accessory.category.categoryType == HMAccessoryCategoryTypeLightbulb {
+                        accessoriesRes.append(accessory)
+                        for service in accessory.services {
+                            for characteristic in service.characteristics {
+                                if let metadata = characteristic.metadata?.manufacturerDescription {
+                                    if metadata == "Brightness" {
+                                        if let value = characteristic.value {
+                                            // On récupère ici la valeur de luminosité
+                                            print(value)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        completed(accessoriesRes)
     }
 
 }
