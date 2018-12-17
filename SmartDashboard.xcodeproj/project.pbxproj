@@ -23,6 +23,7 @@
 		DA1EB56321B5DBC70043999C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56221B5DBC70043999C /* Constants.swift */; };
 		DA1EB56521B5DC9D0043999C /* DecoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56421B5DC9D0043999C /* DecoderJSON.swift */; };
 		DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */; };
+		DA1EB56921B696430043999C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56821B696430043999C /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DA1EB56221B5DBC70043999C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA1EB56421B5DC9D0043999C /* DecoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderJSON.swift; sourceTree = "<group>"; };
 		DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
+		DA1EB56821B696430043999C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 				DA1EB54621B5DB100043999C /* LocationEpita.gpx */,
 				DA1EB56221B5DBC70043999C /* Constants.swift */,
 				DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */,
+				DA1EB56821B696430043999C /* DateExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1EB56521B5DC9D0043999C /* DecoderJSON.swift in Sources */,
+				DA1EB56921B696430043999C /* DateExtension.swift in Sources */,
 				DA1EB55321B5DB480043999C /* Router.swift in Sources */,
 				DA1EB55C21B5DB820043999C /* Location.swift in Sources */,
 				DA1EB56121B5DBA60043999C /* MainViewController.swift in Sources */,

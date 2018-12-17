@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
     func getWeather() {
         let woeid = UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid)
         let woeidInt = Int(woeid) ?? 0
-        MainBusiness.getWeather(woeid: woeidInt, date: "") { (response, error) in
+        MainBusiness.getWeather(woeid: woeidInt) { (response, error) in
             if error == nil {
                 self.setWeatherLabels(response?.first)
             }

@@ -22,8 +22,8 @@ class DataAccess {
         }
     }
     
-    static func getWeather(woeid: Int, date: String, completed: @escaping ((_ response:[Weather]?, _ error:Error?) -> Void)) -> Void {
-        Router.getWeather(woeid, date).makeAlamofireRequest { (response, error) in
+    static func getWeather(woeid: Int, completed: @escaping ((_ response:[Weather]?, _ error:Error?) -> Void)) -> Void {
+        Router.getWeather(woeid).makeAlamofireRequest { (response, error) in
             if error == nil {
                 DecoderJSON<[Weather]>().decode(response: response, completed: { (response, error) in
                     completed(response, error)
