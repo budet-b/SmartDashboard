@@ -22,11 +22,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var minmaxLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     let dateFormatter = DateFormatter()
     let locationManager = CLLocationManager()
     
     let homeManager = HMHomeManager()
     var hmAccessories: [HMAccessory] = []
+    
+    let testArr = ["TestCVCell", "This", "Is", "Test"]
+    
+    let collectionTopInset: CGFloat = 0
+    let collectionBottomInset: CGFloat = 0
+    let collectionLeftInset: CGFloat = 10
+    let collectionRightInset: CGFloat = 10
     
     @IBOutlet weak var homeKitTableViewAccessories: UITableView!
     
@@ -42,6 +51,7 @@ class MainViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        collectionView.register(TestCVCell.self, forCellWithReuseIdentifier: "TestCVCell")
         
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
@@ -132,3 +142,55 @@ extension MainViewController: HMHomeDelegate, HMAccessoryDelegate, HMHomeManager
         print(accessory.name)
     }
 }
+
+
+extension MainViewController: UICollectionViewDelegate {
+    
+}
+
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return testArr.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TestCVCell", for: indexPath) as! TestCVCell
+            return cell
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
+            cell.configure(text: testArr[indexPath.row])
+            return cell
+        }
+    }
+}
+
+
+extension MainViewController : UICollectionViewDelegateFlowLayout {
+    
+    
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: collectionTopInset, left: collectionLeftInset, bottom: collectionBottomInset, right: collectionRightInset)
+    }
+    
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
+        let tableViewCellHeight: CGFloat = 370
+        let collectionItemWidth: CGFloat = tableViewCellHeight - (collectionLeftInset + collectionRightInset)
+        let collectionViewHeight: CGFloat = collectionItemWidth
+        
+        return CGSize(width: collectionItemWidth, height: collectionViewHeight)
+    }
+    
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumInteritemSpacingForSectionAt _: Int) -> CGFloat {
+        return 0
+    }
+
+    
+}
+

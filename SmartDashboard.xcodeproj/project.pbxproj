@@ -24,6 +24,9 @@
 		DA1EB56521B5DC9D0043999C /* DecoderJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56421B5DC9D0043999C /* DecoderJSON.swift */; };
 		DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */; };
 		DA1EB56921B696430043999C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56821B696430043999C /* DateExtension.swift */; };
+		DAE9889921D5039C00E5B5A9 /* ContainerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9889821D5039C00E5B5A9 /* ContainerCVCell.swift */; };
+		DAE9889C21D5095800E5B5A9 /* TestCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9889A21D5095800E5B5A9 /* TestCVCell.swift */; };
+		DAE9889D21D5095800E5B5A9 /* TestCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE9889B21D5095800E5B5A9 /* TestCVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		DA1EB56421B5DC9D0043999C /* DecoderJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderJSON.swift; sourceTree = "<group>"; };
 		DA1EB56621B5E2870043999C /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		DA1EB56821B696430043999C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		DAE9889821D5039C00E5B5A9 /* ContainerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCVCell.swift; sourceTree = "<group>"; };
+		DAE9889A21D5095800E5B5A9 /* TestCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCVCell.swift; sourceTree = "<group>"; };
+		DAE9889B21D5095800E5B5A9 /* TestCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCVCell.xib; sourceTree = "<group>"; };
 		EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +141,7 @@
 		DA1EB54A21B5DB1E0043999C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DAE9889721D5038600E5B5A9 /* Cells */,
 				DA1EB56021B5DBA60043999C /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -185,6 +192,16 @@
 				DA1EB55921B5DB820043999C /* Weather.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		DAE9889721D5038600E5B5A9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DAE9889821D5039C00E5B5A9 /* ContainerCVCell.swift */,
+				DAE9889A21D5095800E5B5A9 /* TestCVCell.swift */,
+				DAE9889B21D5095800E5B5A9 /* TestCVCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EE8192CE8CC62FE2228C0C05 /* Frameworks */ = {
@@ -264,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE9889D21D5095800E5B5A9 /* TestCVCell.xib in Resources */,
 				DA1EB54721B5DB100043999C /* LocationEpita.gpx in Resources */,
 				CBF5BC4521B5D9B8005321E4 /* Assets.xcassets in Resources */,
 				DA1EB55F21B5DB930043999C /* Main.storyboard in Resources */,
@@ -327,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1EB56521B5DC9D0043999C /* DecoderJSON.swift in Sources */,
+				DAE9889921D5039C00E5B5A9 /* ContainerCVCell.swift in Sources */,
 				DA1EB56921B696430043999C /* DateExtension.swift in Sources */,
 				DA1EB55321B5DB480043999C /* Router.swift in Sources */,
 				DA1EB55C21B5DB820043999C /* Location.swift in Sources */,
@@ -337,6 +356,7 @@
 				CBF5BC3E21B5D9B5005321E4 /* AppDelegate.swift in Sources */,
 				DA1EB55B21B5DB820043999C /* Weather.swift in Sources */,
 				DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */,
+				DAE9889C21D5095800E5B5A9 /* TestCVCell.swift in Sources */,
 				DA1EB56321B5DBC70043999C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
