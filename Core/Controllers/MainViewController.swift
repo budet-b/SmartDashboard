@@ -30,8 +30,6 @@ class MainViewController: UIViewController {
     let homeManager = HMHomeManager()
     var hmAccessories: [HMAccessory] = []
     
-    let testArr = ["TestCVCell", "This", "Is", "Test"]
-    
     let collectionTopInset: CGFloat = 0
     let collectionBottomInset: CGFloat = 0
     let collectionLeftInset: CGFloat = 10
@@ -51,7 +49,6 @@ class MainViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        collectionView.register(TestCVCell.self, forCellWithReuseIdentifier: "TestCVCell")
         
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
@@ -150,18 +147,18 @@ extension MainViewController: UICollectionViewDelegate {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testArr.count
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TestCVCell", for: indexPath) as! TestCVCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitterCVCell", for: indexPath) as! TwitterCVCell
+            cell.configure()
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
-            cell.configure(text: testArr[indexPath.row])
             return cell
         }
     }
