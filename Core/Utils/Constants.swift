@@ -16,6 +16,8 @@ struct Constants {
             static let BASE_URL = "https://www.metaweather.com/api/location/"
             static let SEARCH   = "search/?lattlong="
         }
+        
+        static let TwitterURLTopTweets = "https://api.twitter.com/1.1/trends/place.json?id="
     }
     
     static let weatherStatus = [
