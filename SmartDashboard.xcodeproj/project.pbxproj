@@ -26,6 +26,8 @@
 		DA1EB56921B696430043999C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1EB56821B696430043999C /* DateExtension.swift */; };
 		DAE9889921D5039C00E5B5A9 /* ContainerCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9889821D5039C00E5B5A9 /* ContainerCVCell.swift */; };
 		DAE9889F21D6876D00E5B5A9 /* TwitterCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE9889E21D6876D00E5B5A9 /* TwitterCVCell.swift */; };
+		DAE988A721D68FCA00E5B5A9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988A521D68FCA00E5B5A9 /* Article.swift */; };
+		DAE988A821D68FCA00E5B5A9 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988A621D68FCA00E5B5A9 /* News.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		DA1EB56821B696430043999C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DAE9889821D5039C00E5B5A9 /* ContainerCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCVCell.swift; sourceTree = "<group>"; };
 		DAE9889E21D6876D00E5B5A9 /* TwitterCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCVCell.swift; sourceTree = "<group>"; };
+		DAE988A521D68FCA00E5B5A9 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Article.swift; path = Core/Models/News/Article.swift; sourceTree = SOURCE_ROOT; };
+		DAE988A621D68FCA00E5B5A9 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = Core/Models/News/News.swift; sourceTree = SOURCE_ROOT; };
 		EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +126,7 @@
 		DA1EB54821B5DB140043999C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DAE988A421D68FBC00E5B5A9 /* News */,
 				DA1EB55D21B5DB870043999C /* Weather */,
 			);
 			path = Models;
@@ -199,6 +204,16 @@
 				DAE9889E21D6876D00E5B5A9 /* TwitterCVCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DAE988A421D68FBC00E5B5A9 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				DAE988A521D68FCA00E5B5A9 /* Article.swift */,
+				DAE988A621D68FCA00E5B5A9 /* News.swift */,
+			);
+			name = News;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		EE8192CE8CC62FE2228C0C05 /* Frameworks */ = {
@@ -351,8 +366,10 @@
 				DA1EB55221B5DB480043999C /* DataAccess.swift in Sources */,
 				CBF5BC3E21B5D9B5005321E4 /* AppDelegate.swift in Sources */,
 				DA1EB55B21B5DB820043999C /* Weather.swift in Sources */,
+				DAE988A721D68FCA00E5B5A9 /* Article.swift in Sources */,
 				DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */,
 				DA1EB56321B5DBC70043999C /* Constants.swift in Sources */,
+				DAE988A821D68FCA00E5B5A9 /* News.swift in Sources */,
 				DAE9889F21D6876D00E5B5A9 /* TwitterCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
