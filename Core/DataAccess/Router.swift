@@ -13,6 +13,7 @@ public enum Router {
     case getTest()
     case getSearchWeather(String)
     case getWeather(Int)
+    case getTopTweetFrance(Int)
     case getNews()
 }
 
@@ -26,6 +27,7 @@ extension Router : RouterProtocol {
             return .get
         case .getWeather:
             return .get
+        case .getTopTweetFrance:
         case .getNews:
             return .get
         }
@@ -39,6 +41,8 @@ extension Router : RouterProtocol {
             return Constants.Url.WeatherAPI.BASE_URL + Constants.Url.WeatherAPI.SEARCH + lattlong
         case .getWeather(let woeid):
             return Constants.Url.WeatherAPI.BASE_URL + "\(woeid)" + Date().toWeatherDate()
+        case .getTopTweetFrance(let woeid):
+            return Constants.Url.TwitterURLTopTweets + "\(woeid)"
         case .getNews:
             return Constants.Url.TOP_HEADLINES_NEWS
         }
