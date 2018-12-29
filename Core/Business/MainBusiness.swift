@@ -34,4 +34,11 @@ class MainBusiness {
             completed(response)
         }
     }
+    
+    static func getTopTweetsFrance(completed: @escaping ((_ response: TweetsCollection?, _ error: Error?) -> Void)) -> Void {
+        // 23424819 = France top tweets
+        DataAccess.getTopTweets(woeid: 23424819) { (response, error) in
+            completed(response, error)
+        }
+    }
 }

@@ -155,7 +155,7 @@ extension MainViewController: UICollectionViewDataSource {
         
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitterCVCell", for: indexPath) as! TwitterCVCell
-            cell.configure()
+            
             return cell
         }
         else if indexPath.row == 1 {
