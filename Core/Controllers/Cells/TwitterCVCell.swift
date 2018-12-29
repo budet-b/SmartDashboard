@@ -2,7 +2,7 @@
 //  TwitterCVCell.swift
 //  SmartDashboard
 //
-//  Created by Alexandre Toubiana on 12/28/18.
+//  Created by Benjamin Budet on 12/28/18.
 //  Copyright © 2018 Benjamin Budet. All rights reserved.
 //
 

@@ -125,10 +125,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = hmAccessories[indexPath.row].name
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
 }
 
 extension MainViewController: HMHomeDelegate, HMAccessoryDelegate, HMHomeManagerDelegate {
@@ -170,5 +166,9 @@ extension MainViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
             return cell
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }

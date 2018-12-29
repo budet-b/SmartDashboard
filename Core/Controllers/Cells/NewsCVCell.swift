@@ -2,7 +2,7 @@
 //  NewsCVCell.swift
 //  SmartDashboard
 //
-//  Created by Alexandre Toubiana on 12/28/18.
+//  Created by Benjamin Budet on 12/28/18.
 //  Copyright © 2018 Benjamin Budet. All rights reserved.
 //
 
@@ -29,15 +29,6 @@ class NewsCVCell: UICollectionViewCell {
             }
         }
     }
-    
-//    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-//        if self.isFocused {
-//            self.contentView.backgroundColor = .red
-//        }
-//        else {
-//            self.contentView.backgroundColor = .none
-//        }
-//    }
 }
 
 
@@ -55,11 +46,9 @@ extension NewsCVCell: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
 }
 
 class NewsCell: UITableViewCell {
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
-    
 }
