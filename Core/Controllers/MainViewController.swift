@@ -49,7 +49,6 @@ class MainViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        getNews()
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
         }
@@ -91,16 +90,6 @@ class MainViewController: UIViewController {
         }
         homeKitTableViewAccessories.reloadData()
     }
-    
-    func getNews() {
-        MainBusiness.getNews { (response, error) in
-            if let articles = response?.articles {
-                for article in articles {
-                    print(article.title!)
-                }
-            }
-        }
-    }
 }
 
 extension MainViewController: CLLocationManagerDelegate {
@@ -136,6 +125,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = hmAccessories[indexPath.row].name
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
 
 extension MainViewController: HMHomeDelegate, HMAccessoryDelegate, HMHomeManagerDelegate {
@@ -156,8 +149,10 @@ extension MainViewController: UICollectionViewDelegate {
 }
 
 extension MainViewController: UICollectionViewDataSource {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -167,37 +162,13 @@ extension MainViewController: UICollectionViewDataSource {
             cell.configure()
             return cell
         }
+        else if indexPath.row == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCVCell", for: indexPath) as! NewsCVCell
+            return cell
+        }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
             return cell
         }
     }
 }
-
-
-extension MainViewController : UICollectionViewDelegateFlowLayout {
-    
-    
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, insetForSectionAt _: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: collectionTopInset, left: collectionLeftInset, bottom: collectionBottomInset, right: collectionRightInset)
-    }
-    
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        let tableViewCellHeight: CGFloat = 370
-        let collectionItemWidth: CGFloat = tableViewCellHeight - (collectionLeftInset + collectionRightInset)
-        let collectionViewHeight: CGFloat = collectionItemWidth
-        
-        return CGSize(width: collectionItemWidth, height: collectionViewHeight)
-    }
-    
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumInteritemSpacingForSectionAt _: Int) -> CGFloat {
-        return 0
-    }
-
-    
-}
-

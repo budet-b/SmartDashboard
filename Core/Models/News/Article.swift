@@ -12,8 +12,8 @@ class Article: Codable {
     var author: String?
     var title: String?
     var description: String?
-    var image: String?
     var url: String?
+    var urlToImage: String?
     var content: String?
     var publishedAt: String?
     
@@ -21,8 +21,8 @@ class Article: Codable {
         case author
         case title
         case description
-        case image
         case url
+        case urlToImage
         case content
         case publishedAt
     }
