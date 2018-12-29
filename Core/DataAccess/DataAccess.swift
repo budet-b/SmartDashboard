@@ -32,6 +32,16 @@ class DataAccess {
         }
     }
     
+    static func getNews(completed: @escaping ((_ response: News?, _ error:Error?) -> Void)) {
+        Router.getNews().makeAlamofireRequest { (response, error) in
+            if error == nil {
+                DecoderJSON<News>().decode(response: response, completed: { (response, error) in
+                    completed(response, error)
+                })
+            }
+        }
+    }
+    
     static func getAccessories(manager: HMHomeManager, completed: @escaping ([HMAccessory]) -> ()){
         var accessoriesRes: [HMAccessory] = []
         if let home = manager.primaryHome {

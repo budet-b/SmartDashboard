@@ -22,11 +22,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak var minmaxLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     let dateFormatter = DateFormatter()
     let locationManager = CLLocationManager()
     
     let homeManager = HMHomeManager()
     var hmAccessories: [HMAccessory] = []
+    
+    let collectionTopInset: CGFloat = 0
+    let collectionBottomInset: CGFloat = 0
+    let collectionLeftInset: CGFloat = 10
+    let collectionRightInset: CGFloat = 10
     
     @IBOutlet weak var homeKitTableViewAccessories: UITableView!
     
@@ -42,7 +49,6 @@ class MainViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
         }
@@ -130,5 +136,39 @@ extension MainViewController: HMHomeDelegate, HMAccessoryDelegate, HMHomeManager
                    service: HMService,
                    didUpdateValueFor characteristic: HMCharacteristic) {
         print(accessory.name)
+    }
+}
+
+
+extension MainViewController: UICollectionViewDelegate {
+    
+}
+
+extension MainViewController: UICollectionViewDataSource {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitterCVCell", for: indexPath) as! TwitterCVCell
+            cell.configure()
+            return cell
+        }
+        else if indexPath.row == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCVCell", for: indexPath) as! NewsCVCell
+            return cell
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        return false
     }
 }

@@ -23,6 +23,12 @@ class MainBusiness {
         }
     }
     
+    static func getNews(completed: @escaping ((_ response: News?, _ error: Error?) -> Void)) -> Void {
+        DataAccess.getNews() { (response, error) in
+            completed(response, error)
+        }
+    }
+    
     static func getAccessories(manager: HMHomeManager, completed: @escaping ([HMAccessory]) -> ()){
         DataAccess.getAccessories(manager: manager) { (response) in
             completed(response)
