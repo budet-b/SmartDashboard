@@ -28,6 +28,7 @@ extension Router : RouterProtocol {
         case .getWeather:
             return .get
         case .getTopTweetFrance:
+            return .get
         case .getNews:
             return .get
         }
