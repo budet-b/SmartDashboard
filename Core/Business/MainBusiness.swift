@@ -34,4 +34,10 @@ class MainBusiness {
             completed(response)
         }
     }
+    
+    static func getStocks(completed: @escaping ((_ response:[Stocks]?, _ error:Error?) -> Void)) -> Void {
+        DataAccess.getStocks(completed: { (response, error) in
+            completed(response, error)
+        })
+    }
 }

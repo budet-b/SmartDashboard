@@ -24,11 +24,18 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var stockLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var changePriceLabel: UILabel!
+    
     let dateFormatter = DateFormatter()
     let locationManager = CLLocationManager()
     
     let homeManager = HMHomeManager()
     var hmAccessories: [HMAccessory] = []
+    
+    var stocks = [Stocks]()
     
     let collectionTopInset: CGFloat = 0
     let collectionBottomInset: CGFloat = 0
@@ -52,6 +59,7 @@ class MainViewController: UIViewController {
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
         }
+        getStocks()
     }
     
     @objc func updateTime() -> Void {
@@ -72,13 +80,40 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
     func setWeatherLabels(_ weather: Weather?) {
         if let weather = weather {
             self.tempLabel.text = "\(Int(weather.the_temp ?? 0.0))°C"
             self.minmaxLabel.text = "Min: \(Int(weather.min_temp ?? 0.0)) / Max: \(Int(weather.max_temp ?? 0.0))"
             self.tempInfoLabel.text = Constants.weatherStatus[weather.weather_state_abbr ?? ""]
             self.weatherImageView.image = UIImage(named: weather.weather_state_abbr ?? "")
+        }
+    }
+    
+    func getStocks() {
+        MainBusiness.getStocks { (response, error) in
+            if error == nil {
+                self.stocks = response!
+                self.setupStocks()
+            }
+        }
+    }
+    
+    func setupStocks() {
+        if let elmt = stocks.first {
+            stockLabel.text = elmt.symbol
+            companyLabel.text = elmt.companyName
+            priceLabel.text = "\(elmt.latestPrice ?? 0.0)"
+            var changePrice = ""
+            if elmt.extendedChange! < 0.0 {
+                changePrice += "🔻 "
+                changePriceLabel.textColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+            }
+            else {
+                changePrice += "🔺 "
+                changePriceLabel.textColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
+            }
+            changePrice += "\(elmt.extendedChange ?? 0.0)"
+            changePriceLabel.text = changePrice
         }
     }
 

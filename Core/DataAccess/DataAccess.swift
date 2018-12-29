@@ -79,5 +79,14 @@ class DataAccess {
         }
     }
     
+    static func getStocks(completed: @escaping ((_ response: [Stocks]?, _ error:Error?) -> Void)) {
+        Router.getStocks().makeAlamofireRequest { (response, error) in
+            if error == nil {
+                DecoderJSON<[Stocks]>().decode(response: response, completed: { (response, error) in
+                    completed(response, error)
+                })
+            }
+        }
+    }
     
 }
