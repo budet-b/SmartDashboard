@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import HomeKit
 import ExternalAccessory
 
 class MainViewController: UIViewController {
@@ -32,8 +31,6 @@ class MainViewController: UIViewController {
     let dateFormatter = DateFormatter()
     let locationManager = CLLocationManager()
     
-    let homeManager = HMHomeManager()
-    var hmAccessories: [HMAccessory] = []
     
     var stocks = [Stocks]()
     
@@ -42,16 +39,11 @@ class MainViewController: UIViewController {
     let collectionLeftInset: CGFloat = 10
     let collectionRightInset: CGFloat = 10
     
-    @IBOutlet weak var homeKitTableViewAccessories: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.locale = Locale(identifier: "fr_FR")
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-        homeKitTableViewAccessories.delegate = self
-        homeKitTableViewAccessories.dataSource = self
         locationManager.delegate = self
-        homeManager.delegate = self
 
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -131,14 +123,7 @@ class MainViewController: UIViewController {
         changePriceLabel.text = changePrice
     }
 
-    func updateHKAccessories(accessories: [HMAccessory]) {
-        print(accessories)
-        hmAccessories = accessories
-        for accessory in accessories {
-            accessory.delegate = self
-        }
-        homeKitTableViewAccessories.reloadData()
-    }
+
 }
 
 extension MainViewController: CLLocationManagerDelegate {
@@ -164,31 +149,6 @@ extension MainViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hmAccessories.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "hmaccessory", for: indexPath)
-        cell.textLabel?.text = hmAccessories[indexPath.row].name
-        return cell
-    }
-}
-
-extension MainViewController: HMHomeDelegate, HMAccessoryDelegate, HMHomeManagerDelegate {
-    func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        MainBusiness.getAccessories(manager: manager, completed: self.updateHKAccessories)
-    }
-    
-    func accessory(_ accessory: HMAccessory,
-                   service: HMService,
-                   didUpdateValueFor characteristic: HMCharacteristic) {
-        print(accessory.name)
-    }
-}
-
-
 extension MainViewController: UICollectionViewDelegate {
     
 }
@@ -197,7 +157,7 @@ extension MainViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -210,7 +170,11 @@ extension MainViewController: UICollectionViewDataSource {
         else if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCVCell", for: indexPath) as! NewsCVCell
             return cell
+        } else if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeKitCVCell", for: indexPath) as! HomeKitCVCell
+            return cell
         }
+            
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
             return cell
