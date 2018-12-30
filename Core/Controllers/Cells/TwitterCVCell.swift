@@ -39,7 +39,7 @@ extension TwitterCVCell: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TwitterCell", for: indexPath) as! TwitterCell
         cell.tweetLabel.text = arr[indexPath.row].name
         if let nbr = arr[indexPath.row].tweet_volume {
-            cell.tweetNumber.text = "\(nbr) tweets"
+            cell.tweetNumber.text = "\(nbr) Tweets"
         }
         return cell
     }
