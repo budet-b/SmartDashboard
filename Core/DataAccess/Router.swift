@@ -92,6 +92,15 @@ extension Router : RouterProtocol {
             completionHandler(response, response.result.error)
         }
     }
+    
+    func makeAlamofireRequestTwitter(bearer: String, completionHandler: @escaping (_ data: DataResponse<Data>?, _ error: Error?) -> ()) {
+        var req = self.urlRequest
+        req.setValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization")
+        Alamofire.request(req).validate().responseData { (response) in
+            completionHandler(response, response.result.error)
+        }
+    }
+    
 }
 
 
