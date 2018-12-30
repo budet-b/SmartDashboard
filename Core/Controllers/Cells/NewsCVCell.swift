@@ -9,12 +9,18 @@
 import UIKit
 import AlamofireImage
 
+protocol NewsCVCellDelegate {
+    func didSelect(article: Article)
+}
+
 class NewsCVCell: UICollectionViewCell {
     
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsTableView: UITableView!
     
     var newsArr = [Article]()
+    
+    var delegate: NewsCVCellDelegate?
     
     override func awakeFromNib() {
         newsTableView.delegate = self
@@ -33,6 +39,7 @@ class NewsCVCell: UICollectionViewCell {
 
 
 extension NewsCVCell: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArr.count
     }
@@ -46,9 +53,14 @@ extension NewsCVCell: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelect(article: newsArr[indexPath.row])
+    }
 }
 
 class NewsCell: UITableViewCell {
     @IBOutlet weak var newsLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
+    
 }

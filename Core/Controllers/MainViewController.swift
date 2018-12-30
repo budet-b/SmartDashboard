@@ -122,8 +122,6 @@ class MainViewController: UIViewController {
         }
         changePriceLabel.text = changePrice
     }
-
-
 }
 
 extension MainViewController: CLLocationManagerDelegate {
@@ -149,39 +147,35 @@ extension MainViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
 }
 
-extension MainViewController: UICollectionViewDelegate {
-    
-}
-
-extension MainViewController: UICollectionViewDataSource {
-    
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, NewsCVCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitterCVCell", for: indexPath) as! TwitterCVCell
-            
             return cell
         }
         else if indexPath.row == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCVCell", for: indexPath) as! NewsCVCell
+            cell.delegate = self
             return cell
-        } else if indexPath.row == 2 {
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeKitCVCell", for: indexPath) as! HomeKitCVCell
-            return cell
-        }
-            
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContainerCVCell", for: indexPath) as! ContainerCVCell
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    func didSelect(article: Article) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
+        vc.article = article
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
