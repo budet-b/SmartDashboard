@@ -50,18 +50,7 @@ class DataAccess {
                     print(accessory.name)
                     if (accessory.category.categoryType == HMAccessoryCategoryTypeOther && accessory.manufacturer == "Philips") || accessory.category.categoryType == HMAccessoryCategoryTypeLightbulb {
                         accessoriesRes.append(accessory)
-                        for service in accessory.services {
-                            for characteristic in service.characteristics {
-                                if let metadata = characteristic.metadata?.manufacturerDescription {
-                                    if metadata == "Brightness" {
-                                        if let value = characteristic.value {
-                                            // On récupère ici la valeur de luminosité
-                                            print(value)
-                                        }
-                                    }
-                                }
-                            }
-                        }
+
                     }
                 }
             }

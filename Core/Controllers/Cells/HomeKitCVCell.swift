@@ -15,6 +15,7 @@ class HomeKitCVCell: UICollectionViewCell {
     
     let homeManager = HMHomeManager()
     var hmAccessories: [HMAccessory] = []
+    var accessorieUi: [String: String] = [:]
     
     override func awakeFromNib() {
         HomeKitAccessoriesCV.delegate = self
@@ -27,8 +28,40 @@ class HomeKitCVCell: UICollectionViewCell {
         hmAccessories = accessories
         for accessory in accessories {
             accessory.delegate = self
+            updateHomeKitArray(accessory: accessory)
         }
         HomeKitAccessoriesCV.reloadData()
+    }
+    
+    func updateHomeKitArray(accessory: HMAccessory) {
+        for service in accessory.services {
+            for characteristic in service.characteristics {
+                if let metadata = characteristic.metadata?.manufacturerDescription {
+                    if metadata == "Power State" {
+                        if let value = characteristic.value {
+                            if let state = value as? Int {
+                                if state == 0 {
+                                    accessorieUi[accessory.name] = "Off"
+                                    //OFF
+                                    break
+                                } else if state == 1 {
+                                    accessorieUi[accessory.name] = "On"
+                                    //ON
+                                }
+                            }
+                            print(value)
+                        }
+                    }
+                    else if metadata == "Brightness" {
+                        if let value = characteristic.value {
+                            // On récupère ici la valeur de luminosité
+                            accessorieUi[accessory.name] = "\(value) %"
+                            print(value)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -41,6 +74,8 @@ extension HomeKitCVCell: HMHomeDelegate, HMAccessoryDelegate, HMHomeManagerDeleg
                    service: HMService,
                    didUpdateValueFor characteristic: HMCharacteristic) {
         print(accessory.name)
+        updateHomeKitArray(accessory: accessory)
+        HomeKitAccessoriesCV.reloadData()
     }
 }
 
@@ -53,6 +88,7 @@ extension HomeKitCVCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HMAccessoryCell", for: indexPath) as! HomeKitAccessoriesCell
         cell.HomeKitAccessorieName.text = hmAccessories[indexPath.row].name
+        cell.HomeKitAccessorieStatus.text = accessorieUi[hmAccessories[indexPath.row].name]
         return cell
     }
 }

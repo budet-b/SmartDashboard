@@ -224,27 +224,27 @@
                                                     <rect key="frame" x="20" y="96" width="570" height="555"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Mg-PA-0CJ">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="itemSize" width="250" height="150"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HMAccessoryCell" id="54I-l7-uo7" customClass="HomeKitAccessoriesCell">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HMAccessoryCell" id="54I-l7-uo7" customClass="HomeKitAccessoriesCell" customModule="SmartDashboard" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2n-zA-nGn">
-                                                                        <rect key="frame" x="0.0" y="95" width="150" height="46"/>
+                                                                        <rect key="frame" x="0.0" y="95" width="250" height="46"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="708-E7-3mv">
-                                                                        <rect key="frame" x="0.0" y="6" width="150" height="46"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="708-E7-3mv">
+                                                                        <rect key="frame" x="0.0" y="6" width="250" height="46"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -257,9 +257,8 @@
                                                                 <constraint firstItem="R2n-zA-nGn" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="ZSw-po-vSH"/>
                                                                 <constraint firstAttribute="trailing" secondItem="R2n-zA-nGn" secondAttribute="trailing" id="eha-Hy-Z3S"/>
                                                                 <constraint firstItem="708-E7-3mv" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="fcw-Lo-EJG"/>
-                                                                <constraint firstAttribute="trailing" secondItem="708-E7-3mv" secondAttribute="trailing" id="w13-MI-tPv"/>
                                                             </constraints>
-                                                            <size key="customSize" width="150" height="150"/>
+                                                            <size key="customSize" width="250" height="150"/>
                                                             <connections>
                                                                 <outlet property="HomeKitAccessorieName" destination="708-E7-3mv" id="Bor-Xj-QnL"/>
                                                                 <outlet property="HomeKitAccessorieStatus" destination="R2n-zA-nGn" id="DKg-Nh-hwf"/>
@@ -270,7 +269,7 @@
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="HomeKitAccessoriesCV" destination="uwK-EB-lmL" id="4BO-0B-rUh"/>
+                                            <outlet property="HomeKitAccessoriesCV" destination="uwK-EB-lmL" id="jGD-Sc-FDQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
