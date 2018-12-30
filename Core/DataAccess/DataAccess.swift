@@ -50,7 +50,8 @@ class DataAccess {
                     print(accessory.name)
                     if (accessory.category.categoryType == HMAccessoryCategoryTypeOther && accessory.manufacturer == "Philips") || accessory.category.categoryType == HMAccessoryCategoryTypeLightbulb {
                         accessoriesRes.append(accessory)
-
+                    } else if (accessory.category.categoryType == HMAccessoryCategoryTypeOutlet) {
+                        accessoriesRes.append(accessory)
                     }
                 }
             }

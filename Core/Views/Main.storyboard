@@ -224,44 +224,68 @@
                                                     <rect key="frame" x="20" y="96" width="570" height="555"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Mg-PA-0CJ">
-                                                        <size key="itemSize" width="250" height="150"/>
+                                                        <size key="itemSize" width="200" height="200"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HMAccessoryCell" id="54I-l7-uo7" customClass="HomeKitAccessoriesCell" customModule="SmartDashboard" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="250" height="150"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2n-zA-nGn">
-                                                                        <rect key="frame" x="0.0" y="95" width="250" height="46"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                        <rect key="frame" x="0.0" y="154" width="200" height="46"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="38"/>
+                                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXk-xy-qPW">
+                                                                        <rect key="frame" x="0.0" y="69" width="200" height="45"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="708-E7-3mv">
-                                                                        <rect key="frame" x="0.0" y="6" width="250" height="46"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvb-md-sCe">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="65"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="55"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="708-E7-3mv">
+                                                                        <rect key="frame" x="0.0" y="117" width="200" height="42"/>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
-                                                                <constraint firstItem="708-E7-3mv" firstAttribute="top" secondItem="54I-l7-uo7" secondAttribute="top" constant="6" id="2xc-tk-Lek"/>
-                                                                <constraint firstAttribute="bottom" secondItem="R2n-zA-nGn" secondAttribute="bottom" constant="9" id="Dh4-Jw-pgH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="R2n-zA-nGn" secondAttribute="trailing" id="1Pc-I4-1TR"/>
+                                                                <constraint firstItem="R2n-zA-nGn" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="4df-kx-JTk"/>
+                                                                <constraint firstItem="708-E7-3mv" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="JCs-aG-6Sk"/>
+                                                                <constraint firstItem="708-E7-3mv" firstAttribute="top" secondItem="pXk-xy-qPW" secondAttribute="bottom" constant="3" id="JVN-z9-KhZ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="pXk-xy-qPW" secondAttribute="trailing" id="KCZ-3F-faF"/>
+                                                                <constraint firstAttribute="bottom" secondItem="R2n-zA-nGn" secondAttribute="bottom" id="Ypp-GF-lbM"/>
                                                                 <constraint firstItem="R2n-zA-nGn" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="ZSw-po-vSH"/>
+                                                                <constraint firstItem="jvb-md-sCe" firstAttribute="top" secondItem="54I-l7-uo7" secondAttribute="top" id="aII-gW-0aq"/>
+                                                                <constraint firstItem="jvb-md-sCe" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="cex-tr-G6m"/>
                                                                 <constraint firstAttribute="trailing" secondItem="R2n-zA-nGn" secondAttribute="trailing" id="eha-Hy-Z3S"/>
                                                                 <constraint firstItem="708-E7-3mv" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="fcw-Lo-EJG"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jvb-md-sCe" secondAttribute="trailing" id="iYz-05-TA0"/>
+                                                                <constraint firstAttribute="bottom" secondItem="708-E7-3mv" secondAttribute="bottom" constant="41" id="nR5-hB-ncD"/>
+                                                                <constraint firstItem="pXk-xy-qPW" firstAttribute="leading" secondItem="54I-l7-uo7" secondAttribute="leading" id="rQy-u9-SVL"/>
+                                                                <constraint firstAttribute="trailing" secondItem="708-E7-3mv" secondAttribute="trailing" id="zhb-fI-VO4"/>
                                                             </constraints>
-                                                            <size key="customSize" width="250" height="150"/>
+                                                            <size key="customSize" width="200" height="200"/>
                                                             <connections>
-                                                                <outlet property="HomeKitAccessorieName" destination="708-E7-3mv" id="Bor-Xj-QnL"/>
-                                                                <outlet property="HomeKitAccessorieStatus" destination="R2n-zA-nGn" id="DKg-Nh-hwf"/>
+                                                                <outlet property="HomeKitAccessoryEmoji" destination="jvb-md-sCe" id="Pco-mY-X0X"/>
+                                                                <outlet property="HomeKitAccessoryName" destination="708-E7-3mv" id="Bor-Xj-QnL"/>
+                                                                <outlet property="HomeKitAccessoryRoom" destination="pXk-xy-qPW" id="CrE-u5-8jH"/>
+                                                                <outlet property="HomeKitAccessoryStatus" destination="R2n-zA-nGn" id="DKg-Nh-hwf"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
