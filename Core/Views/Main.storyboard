@@ -69,19 +69,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="9NA-kL-f2D">
-                                <rect key="frame" x="1534" y="40" width="342" height="263"/>
+                                <rect key="frame" x="1871" y="52" width="342" height="263"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hmaccessory" textLabel="bU5-ge-Y3D" style="IBUITableViewCellStyleDefault" id="Jug-EP-cdC">
-                                        <rect key="frame" x="0.0" y="66" width="296" height="66"/>
+                                        <rect key="frame" x="0.0" y="66" width="252" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jug-EP-cdC" id="SeR-nv-I1p">
-                                            <rect key="frame" x="0.0" y="0.0" width="296" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="252" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bU5-ge-Y3D">
-                                                    <rect key="frame" x="20" y="0.0" width="256" height="66"/>
+                                                    <rect key="frame" x="20" y="0.0" width="212" height="66"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                                     <nil key="textColor"/>
@@ -236,17 +236,55 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="16r-PI-Cnu"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebY-5b-Wi0">
+                                <rect key="frame" x="1373" y="52" width="458" height="263"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqa-ri-WNQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="54"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emU-pU-W9W">
+                                        <rect key="frame" x="0.0" y="72" width="246" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZt-xb-U74">
+                                        <rect key="frame" x="202" y="0.0" width="250" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="57"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsD-Gf-wsd">
+                                        <rect key="frame" x="254" y="72" width="198" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
                     <connections>
+                        <outlet property="changePriceLabel" destination="fsD-Gf-wsd" id="khP-kF-BHd"/>
                         <outlet property="collectionView" destination="jRn-PO-cwc" id="ZEC-Ld-2Gw"/>
+                        <outlet property="companyLabel" destination="emU-pU-W9W" id="qcx-Q3-jWM"/>
                         <outlet property="dayInfoLabel" destination="MdV-9i-GXP" id="hTi-GP-sZN"/>
                         <outlet property="dayLabel" destination="xcJ-AO-yYe" id="qXl-pm-feU"/>
                         <outlet property="homeKitTableViewAccessories" destination="9NA-kL-f2D" id="aEk-XS-xJs"/>
                         <outlet property="hourLabel" destination="veB-1W-SPH" id="2Uh-Wq-DtY"/>
                         <outlet property="minmaxLabel" destination="q3a-Nm-x17" id="WDG-qu-5be"/>
+                        <outlet property="priceLabel" destination="YZt-xb-U74" id="Ls2-Jk-Uhe"/>
+                        <outlet property="stockLabel" destination="bqa-ri-WNQ" id="8lj-6e-RSE"/>
                         <outlet property="tempInfoLabel" destination="DQq-l5-CRn" id="ww9-lh-rf3"/>
                         <outlet property="tempLabel" destination="4QY-NC-fN7" id="h50-8B-UXL"/>
                         <outlet property="weatherImageView" destination="S8k-dC-C8Y" id="wy3-fR-GqC"/>
