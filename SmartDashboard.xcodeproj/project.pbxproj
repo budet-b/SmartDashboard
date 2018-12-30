@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EE38F1BE32D090B9E4609B7 /* Pods_SmartDashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */; };
+		CB3B79FE21D8DF52005049D7 /* HomeKitCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B79FD21D8DF52005049D7 /* HomeKitCVCell.swift */; };
 		CB7CAEC921C55718006C4E2F /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7CAEC821C55718006C4E2F /* HomeKit.framework */; };
 		CBF5BC3E21B5D9B5005321E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5BC3D21B5D9B5005321E4 /* AppDelegate.swift */; };
 		CBF5BC4521B5D9B8005321E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF5BC4421B5D9B8005321E4 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		59D32E5DC1A7CF5E63CEAE19 /* Pods-SmartDashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDashboard/Pods-SmartDashboard.release.xcconfig"; sourceTree = "<group>"; };
 		8E247E6DF5F36FB704983DF7 /* Pods-SmartDashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartDashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartDashboard/Pods-SmartDashboard.debug.xcconfig"; sourceTree = "<group>"; };
+		CB3B79FD21D8DF52005049D7 /* HomeKitCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitCVCell.swift; sourceTree = "<group>"; };
 		CB7CAEC721C55718006C4E2F /* SmartDashboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartDashboard.entitlements; sourceTree = "<group>"; };
 		CB7CAEC821C55718006C4E2F /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		CBF5BC3A21B5D9B5005321E4 /* SmartDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +224,7 @@
 				DAE9889821D5039C00E5B5A9 /* ContainerCVCell.swift */,
 				DAE9889E21D6876D00E5B5A9 /* TwitterCVCell.swift */,
 				DAE988A021D68EAC00E5B5A9 /* NewsCVCell.swift */,
+				CB3B79FD21D8DF52005049D7 /* HomeKitCVCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				DAE988A121D68EAC00E5B5A9 /* NewsCVCell.swift in Sources */,
 				DA1EB56921B696430043999C /* DateExtension.swift in Sources */,
 				DAE988B121D7E5B300E5B5A9 /* Article.swift in Sources */,
+				CB3B79FE21D8DF52005049D7 /* HomeKitCVCell.swift in Sources */,
 				DA1EB55321B5DB480043999C /* Router.swift in Sources */,
 				CBF6A31C21C8076C00C89DE1 /* Tweet.swift in Sources */,
 				DAE988B021D7E5B300E5B5A9 /* News.swift in Sources */,
