@@ -93,28 +93,42 @@ class MainViewController: UIViewController {
         MainBusiness.getStocks { (response, error) in
             if error == nil {
                 self.stocks = response!
-                self.setupStocks()
+                self.updateStocks()
             }
         }
     }
     
-    func setupStocks() {
-        if let elmt = stocks.first {
-            stockLabel.text = elmt.symbol
-            companyLabel.text = elmt.companyName
-            priceLabel.text = "\(elmt.latestPrice ?? 0.0)"
-            var changePrice = ""
-            if elmt.extendedChange! < 0.0 {
-                changePrice += "🔻 "
+    func updateStocks() {
+        var count = 0
+        self.setupStock(for: count)
+        if !stocks.isEmpty {
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+                count += 1
+                let index = count % self.stocks.count
+                self.setupStock(for: index)
+            }
+
+        }
+    }
+    
+    func setupStock(for index: Int) {
+        let elmt = stocks[index]
+        stockLabel.text = elmt.symbol
+        companyLabel.text = elmt.companyName
+        priceLabel.text = "\(elmt.latestPrice ?? 0.0)"
+        var changePrice = ""
+        if let extendedChange = elmt.extendedChange {
+            if extendedChange < 0.0 {
+                changePrice += "🔻"
                 changePriceLabel.textColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
             }
             else {
-                changePrice += "🔺 "
+                changePrice += "🔺"
                 changePriceLabel.textColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
             }
             changePrice += "\(elmt.extendedChange ?? 0.0)"
-            changePriceLabel.text = changePrice
         }
+        changePriceLabel.text = changePrice
     }
 
     func updateHKAccessories(accessories: [HMAccessory]) {
