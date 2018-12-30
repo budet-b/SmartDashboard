@@ -38,20 +38,18 @@ extension TwitterCVCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TwitterCell", for: indexPath) as! TwitterCell
         cell.tweetLabel.text = arr[indexPath.row].name
+        if let nbr = arr[indexPath.row].tweet_volume {
+            cell.tweetNumber.text = "\(nbr) tweets"
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! TwitterCell
-        if (cell.tweetLabel.text == arr[indexPath.row].name) {
-            cell.tweetLabel.text = "\(arr[indexPath.row].tweet_volume ?? 0) tweets à ce propos"
-        } else {
-             cell.tweetLabel.text = arr[indexPath.row].name
-        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 class TwitterCell: UITableViewCell {
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var tweetNumber: UILabel!
 }

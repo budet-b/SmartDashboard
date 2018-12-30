@@ -155,22 +155,32 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="609" height="98"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmv-Nb-05W">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="519" height="98"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmv-Nb-05W">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="387" height="98"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxL-ER-uLU">
+                                                                        <rect key="frame" x="395" y="0.0" width="214" height="98"/>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstItem="ZxL-ER-uLU" firstAttribute="top" secondItem="B9W-Kq-557" secondAttribute="top" id="6u7-kp-Ar7"/>
                                                                     <constraint firstAttribute="bottom" secondItem="wmv-Nb-05W" secondAttribute="bottom" id="8aR-5Z-XNn"/>
                                                                     <constraint firstItem="wmv-Nb-05W" firstAttribute="leading" secondItem="B9W-Kq-557" secondAttribute="leading" id="9f2-Zf-1uZ"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="wmv-Nb-05W" secondAttribute="trailing" id="Os5-sY-Ymv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="ZxL-ER-uLU" secondAttribute="trailing" id="G89-se-oZV"/>
+                                                                    <constraint firstItem="ZxL-ER-uLU" firstAttribute="leading" secondItem="wmv-Nb-05W" secondAttribute="trailing" id="a4E-Tc-4s8"/>
                                                                     <constraint firstItem="wmv-Nb-05W" firstAttribute="top" secondItem="B9W-Kq-557" secondAttribute="top" id="qqq-TA-EKV"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ZxL-ER-uLU" secondAttribute="bottom" id="xA6-7f-PWn"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
                                                                 <outlet property="tweetLabel" destination="wmv-Nb-05W" id="K47-9J-X7a"/>
+                                                                <outlet property="tweetNumber" destination="ZxL-ER-uLU" id="8kM-o1-qc0"/>
                                                             </connections>
                                                         </tableViewCell>
                                                     </prototypes>

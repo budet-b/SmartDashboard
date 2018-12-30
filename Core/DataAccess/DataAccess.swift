@@ -70,7 +70,7 @@ class DataAccess {
     }
 
     static func getTopTweets(woeid: Int, completed: @escaping ((_ response: TweetsCollection?, _ error:Error?) -> Void)) {
-        Router.getTopTweetFrance(woeid).makeAlamofireRequestTwitter(bearer: "SECRET_BEARER") { (response, error) in
+        Router.getTopTweetFrance(woeid).makeAlamofireRequestTwitter(bearer: Constants.Url.BEARER_TOKEN_TWITTER) { (response, error) in
             if error == nil {
                 DecoderJSON<[TweetsCollection]>().decode(response: response, completed: { (response, error) in
                     completed(response?[0], error)
