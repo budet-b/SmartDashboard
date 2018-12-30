@@ -15,6 +15,7 @@ public enum Router {
     case getWeather(Int)
     case getTopTweetFrance(Int)
     case getNews()
+    case getStocks()
 }
 
 extension Router : RouterProtocol {
@@ -31,6 +32,8 @@ extension Router : RouterProtocol {
             return .get
         case .getNews:
             return .get
+        case .getStocks:
+            return .get
         }
     }
     
@@ -46,6 +49,8 @@ extension Router : RouterProtocol {
             return Constants.Url.TwitterURLTopTweets + "\(woeid)"
         case .getNews:
             return Constants.Url.TOP_HEADLINES_NEWS
+        case .getStocks:
+            return Constants.Url.STOCKS_API
         }
     }
     
@@ -61,11 +66,10 @@ extension Router : RouterProtocol {
         var parameters: Parameters?
         
         switch self {
-            //        case .postSubscribedGroups(let service, let registration_id, let host):
+            //        case .post(let a, let b):
             //            parameters = [
-            //                "service": service,
-            //                "registration_id": registration_id,
-            //                "host": host
+            //                "a": a,
+            //                "b": b,
         //            ]
         default:
             break

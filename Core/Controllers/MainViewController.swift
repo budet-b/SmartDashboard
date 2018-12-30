@@ -24,11 +24,18 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var stockLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var changePriceLabel: UILabel!
+    
     let dateFormatter = DateFormatter()
     let locationManager = CLLocationManager()
     
     let homeManager = HMHomeManager()
     var hmAccessories: [HMAccessory] = []
+    
+    var stocks = [Stocks]()
     
     let collectionTopInset: CGFloat = 0
     let collectionBottomInset: CGFloat = 0
@@ -52,6 +59,7 @@ class MainViewController: UIViewController {
         if UserDefaultsUtils.getData(key: UserDefaultsUtils.woeid) != "" {
             getWeather()
         }
+        getStocks()
     }
     
     @objc func updateTime() -> Void {
@@ -72,7 +80,6 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
     func setWeatherLabels(_ weather: Weather?) {
         if let weather = weather {
             self.tempLabel.text = "\(Int(weather.the_temp ?? 0.0))°C"
@@ -80,6 +87,48 @@ class MainViewController: UIViewController {
             self.tempInfoLabel.text = Constants.weatherStatus[weather.weather_state_abbr ?? ""]
             self.weatherImageView.image = UIImage(named: weather.weather_state_abbr ?? "")
         }
+    }
+    
+    func getStocks() {
+        MainBusiness.getStocks { (response, error) in
+            if error == nil {
+                self.stocks = response!
+                self.updateStocks()
+            }
+        }
+    }
+    
+    func updateStocks() {
+        var count = 0
+        self.setupStock(for: count)
+        if !stocks.isEmpty {
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+                count += 1
+                let index = count % self.stocks.count
+                self.setupStock(for: index)
+            }
+
+        }
+    }
+    
+    func setupStock(for index: Int) {
+        let elmt = stocks[index]
+        stockLabel.text = elmt.symbol
+        companyLabel.text = elmt.companyName
+        priceLabel.text = "\(elmt.latestPrice ?? 0.0)"
+        var changePrice = ""
+        if let extendedChange = elmt.extendedChange {
+            if extendedChange < 0.0 {
+                changePrice += "🔻"
+                changePriceLabel.textColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+            }
+            else {
+                changePrice += "🔺"
+                changePriceLabel.textColor = #colorLiteral(red: 0.2980392157, green: 0.8509803922, blue: 0.3921568627, alpha: 1)
+            }
+            changePrice += "\(elmt.extendedChange ?? 0.0)"
+        }
+        changePriceLabel.text = changePrice
     }
 
     func updateHKAccessories(accessories: [HMAccessory]) {
