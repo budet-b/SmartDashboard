@@ -28,9 +28,14 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Automatic</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Need for weather</string>
-    <key>NSHomeKitUsageDescription</key>
-    <string>Need for HomeKit</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need for weather</string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>Need for HomeKit</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

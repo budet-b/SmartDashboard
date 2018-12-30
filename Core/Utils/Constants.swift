@@ -19,6 +19,7 @@ struct Constants {
         
         static let TwitterURLTopTweets = "https://api.twitter.com/1.1/trends/place.json?id="
         static let TOP_HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=fr&apiKey="
+        static let BEARER_TOKEN_TWITTER = ""
         static let STOCKS_API = "https://api.iextrading.com/1.0/stock/market/list/infocus"
     }
     
