@@ -86,7 +86,7 @@ extension HomeKitCVCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HMAccessoryCell", for: indexPath) as! HomeKitAccessoriesCell
         
-        cell.layer.cornerRadius = 8
+        cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
         
         cell.HomeKitAccessoryName.text = hmAccessories[indexPath.row].name
