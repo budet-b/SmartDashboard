@@ -89,6 +89,11 @@ extension HomeKitCVCell: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HMAccessoryCell", for: indexPath) as! HomeKitAccessoriesCell
         cell.HomeKitAccessorieName.text = hmAccessories[indexPath.row].name
         cell.HomeKitAccessorieStatus.text = accessorieUi[hmAccessories[indexPath.row].name]
+        if cell.HomeKitAccessorieStatus.text == "Off" {
+            cell.HomeKitAccessorieStatus.textColor = UIColor.red
+        } else {
+            cell.HomeKitAccessorieStatus.textColor = UIColor.green
+        }
         return cell
     }
 }
