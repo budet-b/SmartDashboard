@@ -2,9 +2,13 @@
 
 ## Images
 
-![alt text][image1]
+![alt text][image2]
+![alt text][image3]
+![alt text][image4]
 
-[image1]: ../Images/01.png "Image 1"
+[image2]: ./Images/02.png "Image 2"
+[image3]: ./Images/03.png "Image 3"
+[image4]: ./Images/04.png "Image 4"
 
 ## Compte dev Twitter
 
