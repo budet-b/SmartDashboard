@@ -1,6 +1,7 @@
-[Banner]: ./Images/banner.png "Banner"
+![Banner](./Images/banner.png)
 
-# SmartDashboard
+# SmartDashboard - Your latest news in one place
+
 
 ## Images
 
