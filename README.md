@@ -1,3 +1,5 @@
+[Banner]: ./Images/banner.png "Banner"
+
 # SmartDashboard
 
 ## Images
