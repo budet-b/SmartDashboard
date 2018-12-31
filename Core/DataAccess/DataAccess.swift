@@ -69,6 +69,16 @@ class DataAccess {
         }
     }
     
+    static func getSearchTweet(query: String, completed: @escaping ((_ response: TwitterQuery?, _ error:Error?) -> Void)) {
+        Router.getSearchTweets(query).makeAlamofireRequestTwitter(bearer: Constants.Url.BEARER_TOKEN_TWITTER) { (response, error) in
+            if error == nil {
+                DecoderJSON<TwitterQuery>().decode(response: response, completed: { (response, error) in
+                    completed(response, error)
+                })
+            }
+        }
+    }
+    
     static func getStocks(completed: @escaping ((_ response: [Stocks]?, _ error:Error?) -> Void)) {
         Router.getStocks().makeAlamofireRequest { (response, error) in
             if error == nil {

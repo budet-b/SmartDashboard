@@ -11,11 +11,13 @@ import Foundation
 class Tweet: Codable {
     var name: String?
     var url: String?
+    var query: String?
     var tweet_volume: Int?
     
     enum CodingKeys: String, CodingKey {
         case name
         case url
+        case query
         case tweet_volume
     }
 }
