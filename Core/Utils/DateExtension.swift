@@ -29,4 +29,14 @@ extension String {
         return ""
     }
     
+    func toTwitterDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E MMM d HH:mm:ss Z yyyy"
+        let date = dateFormatter.date(from: self)
+        if let date = date {
+            let components = Calendar.current.dateComponents([Calendar.Component.hour], from: date)
+            return "\(components.hour ?? 0)h"
+        }
+        return ""
+    }
 }

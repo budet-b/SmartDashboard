@@ -10,9 +10,11 @@ import Foundation
 
 class TwitterQuery: Codable {
     var statuses: [TwitterStatus]?
+    var search_metadata: SearchMetadata?
     
     enum CodingKeys: String, CodingKey {
         case statuses
+        case search_metadata
     }
 }
 
@@ -45,5 +47,16 @@ class TwitterUser: Codable {
         case screen_name
         case verified
         case profile_image_url
+    }
+}
+
+class SearchMetadata: Codable {
+    var query: String?
+    var count: Int?
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case query
+        case count
     }
 }
