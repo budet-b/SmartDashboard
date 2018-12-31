@@ -147,7 +147,7 @@ extension MainViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {}
 }
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, NewsCVCellDelegate {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, NewsCVCellDelegate, TwitterCVCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -157,6 +157,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwitterCVCell", for: indexPath) as! TwitterCVCell
+            cell.delegate = self
             return cell
         }
         else if indexPath.row == 1 {
@@ -178,4 +179,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         vc.article = article
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func didSelect(query: String) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwitterViewController") as! TwitterViewController
+        vc.query = query
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

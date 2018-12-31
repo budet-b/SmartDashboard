@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol TwitterCVCellDelegate {
+    func didSelect(query: String)
+}
+
 class TwitterCVCell: UICollectionViewCell {
     
     @IBOutlet weak var twitterLabel: UILabel!
     @IBOutlet weak var twitterTableView: UITableView!
     
     var arr = [Tweet]()
+    
+    var delegate: TwitterCVCellDelegate?
     
     override func awakeFromNib() {
         twitterTableView.delegate = self
@@ -45,7 +51,7 @@ extension TwitterCVCell: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.didSelect(query: arr[indexPath.row].query ?? "")
     }
 }
 

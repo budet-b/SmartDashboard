@@ -33,6 +33,8 @@
 		DAE988B021D7E5B300E5B5A9 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988AE21D7E5B300E5B5A9 /* News.swift */; };
 		DAE988B121D7E5B300E5B5A9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988AF21D7E5B300E5B5A9 /* Article.swift */; };
 		DAE988B321D93D1300E5B5A9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B221D93D1300E5B5A9 /* NewsViewController.swift */; };
+		DAE988B521D9B0B100E5B5A9 /* TwitterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B421D9B0B100E5B5A9 /* TwitterQuery.swift */; };
+		DAE988B721D9B55900E5B5A9 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B621D9B55900E5B5A9 /* TwitterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		DAE988AE21D7E5B300E5B5A9 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		DAE988AF21D7E5B300E5B5A9 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DAE988B221D93D1300E5B5A9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		DAE988B421D9B0B100E5B5A9 /* TwitterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterQuery.swift; sourceTree = "<group>"; };
+		DAE988B621D9B55900E5B5A9 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
 		EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 			children = (
 				CBF6A31921C8072E00C89DE1 /* TweetsCollection.swift */,
 				CBF6A31B21C8076C00C89DE1 /* Tweet.swift */,
+				DAE988B421D9B0B100E5B5A9 /* TwitterQuery.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				DAE9889721D5038600E5B5A9 /* Cells */,
 				DA1EB56021B5DBA60043999C /* MainViewController.swift */,
 				DAE988B221D93D1300E5B5A9 /* NewsViewController.swift */,
+				DAE988B621D9B55900E5B5A9 /* TwitterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -391,11 +397,13 @@
 				DA1EB55621B5DB680043999C /* RouterProtocol.swift in Sources */,
 				DA1EB55221B5DB480043999C /* DataAccess.swift in Sources */,
 				CBF5BC3E21B5D9B5005321E4 /* AppDelegate.swift in Sources */,
+				DAE988B521D9B0B100E5B5A9 /* TwitterQuery.swift in Sources */,
 				DAE988B321D93D1300E5B5A9 /* NewsViewController.swift in Sources */,
 				DA1EB55B21B5DB820043999C /* Weather.swift in Sources */,
 				DAE988AC21D7E3A100E5B5A9 /* Stocks.swift in Sources */,
 				DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */,
 				CBF6A31A21C8072E00C89DE1 /* TweetsCollection.swift in Sources */,
+				DAE988B721D9B55900E5B5A9 /* TwitterViewController.swift in Sources */,
 				DA1EB56321B5DBC70043999C /* Constants.swift in Sources */,
 				DAE9889F21D6876D00E5B5A9 /* TwitterCVCell.swift in Sources */,
 			);
