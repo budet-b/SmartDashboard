@@ -35,6 +35,9 @@
 		DAE988B321D93D1300E5B5A9 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B221D93D1300E5B5A9 /* NewsViewController.swift */; };
 		DAE988B521D9B0B100E5B5A9 /* TwitterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B421D9B0B100E5B5A9 /* TwitterQuery.swift */; };
 		DAE988B721D9B55900E5B5A9 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B621D9B55900E5B5A9 /* TwitterViewController.swift */; };
+		DAE988B921DA2D7B00E5B5A9 /* TwitterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988B821DA2D7B00E5B5A9 /* TwitterStatus.swift */; };
+		DAE988BB21DA2D9500E5B5A9 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988BA21DA2D9500E5B5A9 /* TwitterUser.swift */; };
+		DAE988BD21DA2DB000E5B5A9 /* SearchMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE988BC21DA2DB000E5B5A9 /* SearchMetadata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		DAE988B221D93D1300E5B5A9 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		DAE988B421D9B0B100E5B5A9 /* TwitterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterQuery.swift; sourceTree = "<group>"; };
 		DAE988B621D9B55900E5B5A9 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
+		DAE988B821DA2D7B00E5B5A9 /* TwitterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStatus.swift; sourceTree = "<group>"; };
+		DAE988BA21DA2D9500E5B5A9 /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		DAE988BC21DA2DB000E5B5A9 /* SearchMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMetadata.swift; sourceTree = "<group>"; };
 		EA6C34BF5B789150E94F9114 /* Pods_SmartDashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartDashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +135,9 @@
 				CBF6A31921C8072E00C89DE1 /* TweetsCollection.swift */,
 				CBF6A31B21C8076C00C89DE1 /* Tweet.swift */,
 				DAE988B421D9B0B100E5B5A9 /* TwitterQuery.swift */,
+				DAE988B821DA2D7B00E5B5A9 /* TwitterStatus.swift */,
+				DAE988BA21DA2D9500E5B5A9 /* TwitterUser.swift */,
+				DAE988BC21DA2DB000E5B5A9 /* SearchMetadata.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 			files = (
 				DA1EB56521B5DC9D0043999C /* DecoderJSON.swift in Sources */,
 				DAE988A121D68EAC00E5B5A9 /* NewsCVCell.swift in Sources */,
+				DAE988BD21DA2DB000E5B5A9 /* SearchMetadata.swift in Sources */,
 				DA1EB56921B696430043999C /* DateExtension.swift in Sources */,
 				DAE988B121D7E5B300E5B5A9 /* Article.swift in Sources */,
 				CB3B79FE21D8DF52005049D7 /* HomeKitCVCell.swift in Sources */,
@@ -403,7 +413,9 @@
 				DAE988AC21D7E3A100E5B5A9 /* Stocks.swift in Sources */,
 				DA1EB56721B5E2870043999C /* UserDefaultsUtils.swift in Sources */,
 				CBF6A31A21C8072E00C89DE1 /* TweetsCollection.swift in Sources */,
+				DAE988BB21DA2D9500E5B5A9 /* TwitterUser.swift in Sources */,
 				DAE988B721D9B55900E5B5A9 /* TwitterViewController.swift in Sources */,
+				DAE988B921DA2D7B00E5B5A9 /* TwitterStatus.swift in Sources */,
 				DA1EB56321B5DBC70043999C /* Constants.swift in Sources */,
 				DAE9889F21D6876D00E5B5A9 /* TwitterCVCell.swift in Sources */,
 			);

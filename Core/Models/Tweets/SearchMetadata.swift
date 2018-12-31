@@ -1,5 +1,5 @@
 //
-//  TwitterQuery.swift
+//  SearchMetadata.swift
 //  SmartDashboard
 //
 //  Created by Benjamin Budet on 12/31/18.
@@ -8,12 +8,13 @@
 
 import Foundation
 
-class TwitterQuery: Codable {
-    var statuses: [TwitterStatus]?
-    var search_metadata: SearchMetadata?
+class SearchMetadata: Codable {
+    var query: String?
+    var count: Int?
+    
     
     enum CodingKeys: String, CodingKey {
-        case statuses
-        case search_metadata
+        case query
+        case count
     }
 }
