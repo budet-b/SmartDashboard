@@ -1,5 +1,11 @@
 # SmartDashboard
 
+## Images
+
+![alt text][image1]
+
+[image1]: ../Images/01.png "Image 1"
+
 ## Compte dev Twitter
 
 1. Créer son compte dev Twitter
